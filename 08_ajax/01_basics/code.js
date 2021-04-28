@@ -16,21 +16,21 @@
 // Lets go through it step by step
 
 // 1. We tell fetch to get us the content of this URL 
-fetch('https://open.exchangerate-api.com/v6/latest')
+fetch('http://www.recipepuppy.com/api/?i=onions,garlic&q=omelet&p=3')
 // 2. Fetch will respond with an unfulfilled promise, but once the promise is fulfilled, then we can save the 
 // whole response in the 'response' object
 .then( response => response.json() )
 // 3. We have to get the body (content) of the response and convert it (parse it) from JSON to JS
 // 4. Once that is done (the promise is resolved) then we save the parsed JS in the 'data' object
 .then( data => {
-
+  console.log(data)
   // inside this block we have access to data
-  console.log(data.rates)
+  // console.log(data.rates)
   
-  for ( x in data.rates){
-    console.log(x)
-    $('select').append(`<option>${x}</option>`)
-  }
+  // for ( x in data.rates){
+  //   console.log(x)
+  //   $('select').append(`<option>${x}</option>`)
+  // }
  
   
 })
